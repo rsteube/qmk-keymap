@@ -24,6 +24,7 @@ enum layers {
 
 #define LOWER  MO(_LOWER)
 #define RAISE  MO(_RAISE)
+
 #define SESS_1 LCTL(LALT(KC_1))
 #define SESS_2 LCTL(LALT(KC_2))
 #define SESS_3 LCTL(LALT(KC_3))
@@ -48,10 +49,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTY] = LAYOUT_planck_mit( \
-  KC_TAB,  KC_Q,               KC_W,               KC_E,               KC_R,               KC_T,   KC_Y, KC_U,               KC_I,               KC_O,                KC_P,                  KC_BSPC, \
-  KC_ESC,  MT(MOD_LGUI, KC_A), MT(MOD_LALT, KC_S), MT(MOD_LCTL, KC_D), MT(MOD_LSFT, KC_F), KC_G,   KC_H, MT(MOD_RSFT, KC_J), MT(MOD_RCTL, KC_K), MT(MOD_LALT, KC_L),  MT(MOD_RGUI, KC_SCLN), KC_QUOT, \
-  KC_LSFT, KC_Z,               KC_X,               KC_C,               KC_V,               KC_B,   KC_N, KC_M,               KC_COMM,            KC_DOT,              KC_SLSH,               KC_ENT , \
-  _______, KC_LCTL,            KC_LALT,            KC_LGUI,            LOWER,              KC_SPC,       RAISE,              KC_LEFT,            KC_DOWN,             KC_UP,                 KC_RGHT \
+  KC_TAB,  KC_Q,         KC_W,         KC_E,         KC_R,         KC_T,   KC_Y,  KC_U,         KC_I,         KC_O,         KC_P,            KC_BSPC, \
+  KC_ESC,  LGUI_T(KC_A), LALT_T(KC_S), LCTL_T(KC_D), LSFT_T(KC_F), KC_G,   KC_H,  RSFT_T(KC_J), RCTL_T(KC_K), RALT_T(KC_L), RGUI_T(KC_SCLN), KC_QUOT, \
+  KC_LSFT, KC_Z,         KC_X,         KC_C,         KC_V,         KC_B,   KC_N,  KC_M,         KC_COMM,      KC_DOT,       KC_SLSH,         KC_ENT,  \
+  _______, KC_LCTL,      KC_LALT,      KC_LGUI,      LOWER,        KC_SPC, RAISE, KC_LEFT,      KC_DOWN,      KC_UP,        KC_RGHT \
 ),
 
 /* Lower
@@ -66,10 +67,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_planck_mit( \
-  KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_BSPC, \
-  KC_DEL,  MT(MOD_LGUI, KC_F1), MT(MOD_LALT, KC_F2), MT(MOD_LCTL, KC_F3), MT(MOD_LSFT, KC_F4), KC_F5,   KC_F6, MT(MOD_RSFT, KC_UNDS), MT(MOD_RCTL, KC_PLUS), MT(MOD_LALT, KC_LCBR),  MT(MOD_RGUI, KC_RCBR), KC_PIPE, \
-  _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,S(KC_NUHS),S(KC_NUBS),_______, _______, _______, \
-  _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY \
+  KC_TILD, KC_EXLM,       KC_AT,         KC_HASH,       KC_DLR,        KC_PERC, KC_CIRC, KC_AMPR,         KC_ASTR,         KC_LPRN,         KC_RPRN,         KC_BSPC, \
+  KC_DEL,  LGUI_T(KC_F1), LALT_T(KC_F2), LCTL_T(KC_F3), LSFT_T(KC_F4), KC_F5,   KC_F6,   RSFT_T(KC_UNDS), RCTL_T(KC_PLUS), RALT_T(KC_LCBR), RGUI_T(KC_RCBR), KC_PIPE, \
+  _______, KC_F7,         KC_F8,         KC_F9,         KC_F10,        KC_F11,  KC_F12,  S(KC_NUHS),      S(KC_NUBS),      _______,         _______,         _______, \
+  _______, _______,       _______,       _______,       _______,       _______, _______, KC_MNXT,         KC_VOLD,         KC_VOLU,         KC_MPLY \
 ),
 
 /* Raise
@@ -84,10 +85,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_RAISE] = LAYOUT_planck_mit( \
-  KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC, \
-  KC_DEL,  MT(MOD_LGUI, KC_F1), MT(MOD_LALT, KC_F2), MT(MOD_LCTL, KC_F3), MT(MOD_LSFT, KC_F4), KC_F5,   KC_F6, MT(MOD_RSFT, KC_MINS), MT(MOD_RCTL, KC_EQL), MT(MOD_LALT, KC_LBRC),  MT(MOD_RGUI, KC_RBRC), KC_BSLS, \
-  _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_NUHS, KC_NUBS, _______, _______, _______, \
-  _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY \
+  KC_GRV,  KC_1,          KC_2,          KC_3,          KC_4,          KC_5,    KC_6,    KC_7,            KC_8,           KC_9,            KC_0,            KC_BSPC, \
+  KC_DEL,  LGUI_T(KC_F1), LALT_T(KC_F2), LCTL_T(KC_F3), LSFT_T(KC_F4), KC_F5,   KC_F6,   RSFT_T(KC_MINS), RCTL_T(KC_EQL), LALT_T(KC_LBRC), RGUI_T(KC_RBRC), KC_BSLS, \
+  _______, KC_F7,         KC_F8,         KC_F9,         KC_F10,        KC_F11,  KC_F12,  KC_NUHS,         KC_NUBS,        _______,         _______,         _______, \
+  _______, _______,       _______,       _______,       _______,       _______, _______, KC_MNXT,         KC_VOLD,        KC_VOLU,         KC_MPLY \
 ),
 
 /* Adjust (Lower + Raise)
@@ -102,10 +103,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_ADJUST] =  LAYOUT_ortho_4x12( \
-  RESET,   SESS_1,                SESS_2,                SESS_3,                SESS_4,                SESS_5,  SESS_6,  SESS_7,  SESS_8,  SESS_9,  _______, KC_DEL,  \
-  _______, MT(MOD_LGUI, _______), MT(MOD_LALT, BL_TOGG), MT(MOD_LCTL, BL_STEP), MT(MOD_LSFT, _______), _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, \
-  _______, RGB_VAD, RGB_TOG, RGB_MOD, RGB_VAI, _______, _______, _______, _______, _______, _______, SESS_C,  \
-  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______ \
+  RESET,   SESS_1,          SESS_2,          SESS_3,          SESS_4,          SESS_5,  SESS_6,  SESS_7,  SESS_8,  SESS_9,  _______, KC_DEL,  \
+  _______, LGUI_T(_______), LALT_T(BL_TOGG), LCTL_T(BL_STEP), LSFT_T(_______), _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, \
+  _______, RGB_VAD,         RGB_TOG,         RGB_MOD,         RGB_VAI,         _______, _______, _______, _______, _______, _______, SESS_C,  \
+  _______, _______,         _______,         _______,         _______,         _______, _______, _______, _______, _______, _______, _______ \
 )
 };
 
