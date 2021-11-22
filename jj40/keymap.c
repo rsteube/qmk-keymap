@@ -17,13 +17,17 @@
 
 enum layers {
   _QWERTY = 0,
+  _COLEMAK,
   _LOWER,
   _RAISE,
   _ADJUST,
 };
 
-#define LOWER  MO(_LOWER)
-#define RAISE  MO(_RAISE)
+#define LOWER MO(_LOWER)
+#define RAISE MO(_RAISE)
+
+#define QWERTY  DF(_QWERTY)
+#define COLEMAK DF(_COLEMAK)
 
 #define SESS_1 LCTL(LALT(KC_1))
 #define SESS_2 LCTL(LALT(KC_2))
@@ -53,6 +57,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_ESC,  LGUI_T(KC_A), LALT_T(KC_S), LCTL_T(KC_D), LSFT_T(KC_F), KC_G,   KC_H,  RSFT_T(KC_J), RCTL_T(KC_K), LALT_T(KC_L), RGUI_T(KC_SCLN), KC_QUOT, \
   KC_LSFT, KC_Z,         KC_X,         KC_C,         KC_V,         KC_B,   KC_N,  KC_M,         KC_COMM,      KC_DOT,       KC_SLSH,         KC_ENT,  \
   _______, KC_LCTL,      KC_LALT,      KC_LGUI,      LOWER,        KC_SPC, RAISE, KC_LEFT,      KC_DOWN,      KC_UP,        KC_RGHT \
+),
+
+/* Colemak-DH
+ * ,-----------------------------------------------------------------------------------.
+ * | Tab  |   Q  |   W  |   F  |   P  |   B  |   J  |   L  |   U  |   Y  |   ;  | Bksp |
+ * |------+------+------+------+------+-------------+------+------+------+------+------|
+ * | Esc  |   A  |   R  |   S  |   T  |   G  |   M  |   N  |   E  |   I  |   O  |  "   |
+ * |------+------+------+------+------+------|------+------+------+------+------+------|
+ * | Shift|   Z  |   X  |   C  |   D  |   V  |   K  |   H  |   ,  |   .  |   /  |Enter |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      | Ctrl | Alt  | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
+ * `-----------------------------------------------------------------------------------'
+ */
+[_COLEMAK] = LAYOUT_planck_mit( \
+  KC_TAB,  KC_Q,         KC_W,         KC_F,         KC_P,         KC_B,   KC_J,  KC_L,         KC_U,         KC_Y,         KC_SCLN,         KC_BSPC, \
+  KC_ESC,  LGUI_T(KC_A), LALT_T(KC_R), LCTL_T(KC_S), LSFT_T(KC_T), KC_G,   KC_M,  RSFT_T(KC_N), RCTL_T(KC_E), LALT_T(KC_I), RGUI_T(KC_O),    KC_QUOT, \
+  KC_LSFT, KC_Z,         KC_X,         KC_C,         KC_D,         KC_V,   KC_K,  KC_M,         KC_COMM,      KC_DOT,       KC_SLSH,         KC_ENT,  \
+  _______, KC_LCTL,      KC_LALT,      KC_LGUI,      LOWER,        KC_SPC,        RAISE,        KC_LEFT,      KC_DOWN,      KC_UP,           KC_RGHT \
 ),
 
 /* Lower
@@ -95,17 +117,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------------------------------------.
  * |Reset |SESS_1|SESS_2|SESS_3|SESS_4|SESS_5|SESS_6|SESS_7|SESS_8|SESS_9|      |  Del |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |      | GUI  | Alt  | Ctrl | Shift|      |      | Left | Down | Up   |Right |      |
+ * |Querty| GUI  | Alt  | Ctrl | Shift|      |      | Left | Down | Up   |Right |      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |      |SESS_C|
+ * |Colemk|      |      |      |      |      |      |      |      |      |      |SESS_C|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |             |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_ADJUST] =  LAYOUT_ortho_4x12( \
   RESET,   SESS_1,          SESS_2,          SESS_3,          SESS_4,          SESS_5,  SESS_6,  SESS_7,  SESS_8,  SESS_9,  _______, KC_DEL,  \
-  _______, LGUI_T(_______), LALT_T(BL_TOGG), LCTL_T(BL_STEP), LSFT_T(_______), _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, \
-  _______, RGB_VAD,         RGB_TOG,         RGB_MOD,         RGB_VAI,         _______, _______, _______, _______, _______, _______, SESS_C,  \
+  QWERTY,  LGUI_T(_______), LALT_T(BL_TOGG), LCTL_T(BL_STEP), LSFT_T(_______), _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, \
+  COLEMAK, RGB_VAD,         RGB_TOG,         RGB_MOD,         RGB_VAI,         _______, _______, _______, _______, _______, _______, SESS_C,  \
   _______, _______,         _______,         _______,         _______,         _______, _______, _______, _______, _______, _______, _______ \
 )
 };
