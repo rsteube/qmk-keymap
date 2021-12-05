@@ -52,8 +52,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 [_ADJUST] =  LAYOUT( \
   SESS_1,          SESS_2,          SESS_3,          SESS_4,          SESS_5,  SESS_6,  SESS_7,  SESS_8,  SESS_9,  _______, \
-  LGUI_T(_______), LALT_T(BL_TOGG), LCTL_T(BL_STEP), LSFT_T(_______), _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, \
-  RGB_VAD,         RGB_TOG,         RGB_MOD,         RGB_VAI,         _______, _______, _______, _______, _______, _______, \
+  LGUI_T(_______), LALT_T(_______), LCTL_T(_______), LSFT_T(_______), _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, \
+  _QWERTY,         _COLEMAK,        _______,         _______,         _______, _______, _______, _______, _______, _______, \
                                               LOWER,         KC_BSPC, KC_SPC,  RAISE \
 )
 };
