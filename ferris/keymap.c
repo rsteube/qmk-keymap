@@ -69,8 +69,8 @@ const uint16_t PROGMEM sd_combo[] = {LALT_T(KC_S), LCTL_T(KC_D), COMBO_END};
 const uint16_t PROGMEM io_combo[] = {KC_I, KC_O, COMBO_END};
 const uint16_t PROGMEM kl_combo[] = {RCTL_T(KC_K), RALT_T(KC_L), COMBO_END};
 combo_t key_combos[COMBO_COUNT] = {
-    COMBO(we_combo, KC_ESC),
-    COMBO(sd_combo, KC_TAB),
+    COMBO(we_combo, KC_TAB),
+    COMBO(sd_combo, KC_ESC),
     COMBO(io_combo, KC_BSPC),
     COMBO(kl_combo, KC_ENT),
 };
